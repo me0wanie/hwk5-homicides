@@ -1,0 +1,125 @@
+---
+title: "HWK #5 – Homicides"
+author: "Melanie Luu"
+output: pdf_document
+---
+
+### 1. Introduction
+
+For Homework #5, I will be working with the Washington Post homicide dataset.  
+This document will eventually contain all analysis, plots, and interpretation, but for the first commit it only includes the structure and setup.
+
+### 2. Project Setup Summary
+
+- Created an R Project for HWK #5  
+- Added required folders:
+  - `data/`
+  - `figures/`
+  - `writing/`
+- Created this RMarkdown document inside the `writing/` directory  
+- Initialized git for the project  
+- Ready to make the first commit
+
+---
+
+### 3. Load Libraries (placeholder)
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = TRUE,
+  message = FALSE,
+  warning = FALSE
+)
+
+# Force knitting to use the PROJECT ROOT as working directory
+knitr::opts_knit$set(root.dir = "..")
+
+library(tidyverse)
+library(lubridate)
+library(scales)
+```
+
+---
+
+### 4. Placeholder: Data Import
+
+```{r import, message=FALSE}
+# Read data from the `data` subdirectory (relative to project root)
+homicides_raw <- readr::read_csv("data/homicide-data.csv")
+
+# Glimpse at the structure
+dplyr::glimpse(homicides_raw)
+```
+
+### 5. Create monthly homicide counts for Baltimore
+
+```{r baltimore-monthly}
+baltimore_monthly <-
+  homicides_raw |>
+  dplyr::filter(city == "Baltimore") |>
+  # reported_date is an integer like 20150412; convert to Date
+  dplyr::mutate(
+    date  = lubridate::ymd(as.character(reported_date)),
+    month = lubridate::floor_date(date, unit = "month"),
+    season = dplyr::if_else(
+      lubridate::month(month) %in% c(11, 12, 1, 2, 3, 4),
+      "Cold months (Nov–Apr)",
+      "Warm months (May–Oct)"
+    )
+  ) |>
+  dplyr::count(month, season, name = "homicides")
+
+head(baltimore_monthly)
+```
+
+### 6. Plot monthly homicides in Baltimore
+
+```{r baltimore-plot, fig.width=7, fig.height=4.5}
+freddie_arrest <- as.Date("2015-04-12")
+
+ggplot2::ggplot(baltimore_monthly,
+                ggplot2::aes(x = month, y = homicides, color = season)) +
+  ggplot2::geom_line() +
+  ggplot2::geom_point(size = 1.5) +
+  # smooth line for seasonal / long-term trends
+  ggplot2::geom_smooth(se = FALSE, size = 1, linetype = "solid") +
+  ggplot2::geom_vline(xintercept = freddie_arrest, linetype = "dashed") +
+  ggplot2::annotate(
+    "text",
+    x = freddie_arrest,
+    y = max(baltimore_monthly$homicides, na.rm = TRUE) + 2,
+    label = "Freddie Gray arrest\nApr 12, 2015",
+    hjust = -0.05,
+    vjust = 1,
+    size = 3
+  ) +
+  ggplot2::scale_color_manual(
+    values = c(
+      "Cold months (Nov–Apr)" = "#1f78b4",
+      "Warm months (May–Oct)" = "#e31a1c"
+    )
+  ) +
+  ggplot2::scale_x_date(
+    date_breaks = "1 year",
+    date_labels = "%Y"
+  ) +
+  ggplot2::labs(
+    title = "Monthly homicides in Baltimore",
+    subtitle = "Cold vs warm months, with reference line for the arrest of Freddie Gray",
+    x = "Month",
+    y = "Number of homicides",
+    color = "Season"
+  ) +
+  ggplot2::theme_minimal(base_size = 11) +
+  ggplot2::theme(
+    legend.position = "top",
+    panel.grid.minor = ggplot2::element_blank()
+  )
+```
+
+### 7. Interpretation
+
+The plot shows clear seasonal patterns in Baltimore homicides.  
+Warm months (May–October) generally have higher homicide counts than cold months.  
+There is a noticeable increase in variability around 2014–2016, including a sharp spike shortly after the arrest of Freddie Gray in April 2015.  
+The smooth line highlights a long-term upward trend from 2011–2017.
