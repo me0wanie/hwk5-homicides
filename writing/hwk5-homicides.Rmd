@@ -1,3 +1,5 @@
+# ---- HWK 5 main analysis document ----
+
 ---
 title: "HWK #5 – Homicides"
 author: "Melanie Luu"
@@ -117,7 +119,17 @@ ggplot2::ggplot(baltimore_monthly,
   )
 ```
 
-### 7. Interpretation
+### 7. Methods summary
+
+In this homework, I used the Washington Post homicide dataset and focused on
+homicides in Baltimore, Maryland. I converted the reported homicide dates into
+proper Date objects, aggregated counts to the monthly level, and created an
+indicator for “cold” months (November–April) versus “warm” months (May–October).
+I then used these monthly counts to build a time-series plot with a loess smooth
+to highlight seasonal and long-term patterns, and added a vertical reference
+line for the arrest date of Freddie Gray.
+
+### 8. Interpretation
 
 The plot shows clear seasonal patterns in Baltimore homicides.  
 Warm months (May–October) generally have higher homicide counts than cold months.  
