@@ -152,6 +152,8 @@ The smooth trend indicates homicides rose from 2014–2016 before leveling.
 This analysis uses only CRAN packages and reads data from `data/homicide-data.csv`.  
 Anyone cloning the repository with the same structure can knit the document.
 
+### 10. Session Information
+
 ```{r session-info}
 sessionInfo()
 ```
