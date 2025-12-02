@@ -124,6 +124,7 @@ ggplot2::ggplot(baltimore_monthly,
     panel.grid.minor = ggplot2::element_blank()
   )
 ```
+*Figure 1. Monthly homicides in Baltimore, 2007–2017.*
 ---
 # Methods and Interpretation
 ---
@@ -148,3 +149,6 @@ The smooth trend indicates homicides rose from 2014–2016 before leveling.
 This analysis uses only CRAN packages and reads data from `data/homicide-data.csv`.  
 Anyone cloning the repository with the same structure can knit the document.
 
+```{r session-info}
+sessionInfo()
+```
