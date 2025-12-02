@@ -87,6 +87,7 @@ ggplot2::ggplot(baltimore_monthly,
   ggplot2::geom_point(size = 1.5) +
   # smooth line for seasonal / long-term trends
   ggplot2::geom_smooth(se = FALSE, size = 1, linetype = "solid") +
+  # Vertical reference line: arrest of Freddie Gray on April 12, 2015
   ggplot2::geom_vline(xintercept = freddie_arrest, linetype = "dashed") +
   ggplot2::annotate(
     "text",
