@@ -11,6 +11,10 @@ output: pdf_document
 For Homework #5, I will be working with the Washington Post homicide dataset.  
 This document will eventually contain all analysis, plots, and interpretation, but for the first commit it only includes the structure and setup.
 
+For this assignment, I chose **Choice 2** from Homework #5: recreating the monthly homicide figure for Baltimore with a reference line for the arrest of Freddie Gray and colors to show cold versus warm months.  
+
+The data come from the Washington Post’s `homicide-data.csv` file, which I downloaded from the Washington Post GitHub repository and saved in my local `data/` folder inside this R project.
+
 ### 2. Project Setup Summary
 
 - Created an R Project for HWK #5  
@@ -119,7 +123,7 @@ ggplot2::ggplot(baltimore_monthly,
   )
 ```
 
-### 7. Methods summary
+### 7. Methods
 
 In this homework, I used the Washington Post homicide dataset and focused on
 homicides in Baltimore, Maryland. I converted the reported homicide dates into
