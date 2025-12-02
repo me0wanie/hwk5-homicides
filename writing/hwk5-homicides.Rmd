@@ -127,6 +127,9 @@ ggplot2::ggplot(baltimore_monthly,
 # Methods and Interpretation
 ---
 
+Cold months were defined as November–April, while warm months were defined as May–October. 
+This follows the pattern used in the original Washington Post figure.
+
 ### 7. Methods summary
 
 Steps included:
