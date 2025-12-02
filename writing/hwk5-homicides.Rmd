@@ -122,16 +122,18 @@ ggplot2::ggplot(baltimore_monthly,
     panel.grid.minor = ggplot2::element_blank()
   )
 ```
+---
+# Methods and Interpretation
+---
 
-### 7. Methods
+### 7. Methods summary
 
-In this homework, I used the Washington Post homicide dataset and focused on
-homicides in Baltimore, Maryland. I converted the reported homicide dates into
-proper Date objects, aggregated counts to the monthly level, and created an
-indicator for “cold” months (November–April) versus “warm” months (May–October).
-I then used these monthly counts to build a time-series plot with a loess smooth
-to highlight seasonal and long-term patterns, and added a vertical reference
-line for the arrest date of Freddie Gray.
+Steps included:
+- Filter Baltimore cases
+- Convert reported_date to proper Date objects
+- Aggregate counts to monthly level
+- Create cold vs warm month indicator
+- Build monthly time-series plot with smooth and reference line
 
 ### 8. Interpretation
 
