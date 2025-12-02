@@ -140,6 +140,8 @@ This follows the pattern used in the original Washington Post figure.
 
 ### 7. Methods summary
 
+I used ggplot2::geom_smooth() with method = "loess", which is appropriate for seasonal trend visualization.
+
 Steps included:
 - Filtering Baltimore cases  
 - Converting reported_date to YYYY-MM-DD  
