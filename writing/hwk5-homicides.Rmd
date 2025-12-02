@@ -1,5 +1,3 @@
-# ---- HWK 5 main analysis document ----
-
 ---
 title: "HWK #5 – Homicides"
 author: "Melanie Luu"
@@ -79,8 +77,6 @@ head(baltimore_monthly)
 ```
 
 ### 6. Plot monthly homicides in Baltimore
-# Main Baltimore time-series plot
-# Adds smooth trend line + Freddie Gray arrest marker
 
 ```{r baltimore-plot, fig.width=7, fig.height=4.5}
 freddie_arrest <- as.Date("2015-04-12")
@@ -124,7 +120,6 @@ ggplot2::ggplot(baltimore_monthly,
     panel.grid.minor = ggplot2::element_blank()
   )
 ```
-*Figure 1. Monthly homicides in Baltimore, 2007–2017.*
 ---
 # Methods and Interpretation
 ---
