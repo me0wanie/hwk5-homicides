@@ -3,7 +3,8 @@
 Author: **Melanie Luu**  
 Course: R Programming for Research  
 
-This repository contains my work for **Homework #5**, using the Washington Post homicide dataset.
+## Purpose
+This repository contains Homework #5 for R Programming for Research, focusing on homicide data from the Washington Post.
 
 ---
 
