@@ -123,6 +123,12 @@ ggplot2::ggplot(baltimore_monthly,
     panel.grid.minor = ggplot2::element_blank()
   )
 ```
+```{r save-plot, echo=FALSE}
+ggplot2::ggsave(
+  filename = "figures/baltimore-monthly.png",
+  width = 7, height = 4.5, dpi = 300
+)
+```
 *Figure 1. Monthly homicides in Baltimore, 2007–2017.*
 
 ---
