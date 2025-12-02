@@ -135,11 +135,11 @@ This follows the pattern used in the original Washington Post figure.
 ### 7. Methods summary
 
 Steps included:
-- Filter Baltimore cases
-- Convert reported_date to proper Date objects
-- Aggregate counts to monthly level
-- Create cold vs warm month indicator
-- Build monthly time-series plot with smooth and reference line
+- Filtering Baltimore cases  
+- Converting reported_date to YYYY-MM-DD  
+- Aggregating monthly  
+- Creating season variable  
+- Plotting with loess trend + reference line  
 
 ### 8. Interpretation
 
