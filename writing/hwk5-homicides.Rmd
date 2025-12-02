@@ -142,3 +142,9 @@ Steps included:
 Warm months (May–October) consistently show higher homicide counts than cold months.  
 A noticeable spike occurs shortly after Freddie Gray's arrest in April 2015.  
 The smooth trend indicates homicides rose from 2014–2016 before leveling.
+
+### 9. Reproducibility notes
+
+This analysis uses only CRAN packages and reads data from `data/homicide-data.csv`.  
+Anyone cloning the repository with the same structure can knit the document.
+
