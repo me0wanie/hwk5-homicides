@@ -112,7 +112,7 @@ ggplot2::ggplot(baltimore_monthly,
     date_labels = "%Y"
   ) +
   ggplot2::labs(
-    title = "Monthly homicides in Baltimore",
+    title = "Monthly Homicides in Baltimore",
     subtitle = "Cold vs warm months, with reference line for the arrest of Freddie Gray",
     x = "Month",
     y = "Number of homicides",
