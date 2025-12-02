@@ -13,6 +13,8 @@ For this assignment, I chose **Choice 2** from Homework #5: recreating the month
 
 The data come from the Washington Post’s `homicide-data.csv` file, which I downloaded from the Washington Post GitHub repository and saved in my local `data/` folder inside this R project.
 
+Source: https://github.com/washingtonpost/data-homicides
+
 ### 2. Project Setup Summary
 
 - Created an R Project for HWK #5  
