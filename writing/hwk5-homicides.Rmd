@@ -155,6 +155,7 @@ The smooth trend indicates homicides rose from 2014–2016 before leveling.
 
 ### 9. Reproducibility notes
 
+The project root is enforced using knitr::opts_knit$set(root.dir = '..') so knitting works regardless of the working directory.
 This analysis uses only CRAN packages and reads data from `data/homicide-data.csv`.  
 Anyone cloning the repository with the same structure can knit the document.
 
